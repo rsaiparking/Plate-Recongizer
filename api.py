@@ -3,9 +3,11 @@ from flask import Flask, request
 import Main
 import plate
 from flask import Response
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
+CORS(app)
 
 @app.route('/number', methods=['POST'])
 def handle_form():
